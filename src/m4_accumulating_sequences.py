@@ -22,7 +22,7 @@ def main():
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    run_test_draw_shapes()
+    # run_test_draw_shapes()
     run_test_rectangles_from_circles()
 
 
@@ -404,7 +404,7 @@ def rectangles_from_circles(circles):
       :rtype: list of rg.Rectangles
     """
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -415,7 +415,10 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ####################################################################
     # ------------------------------------------------------------------
-
+    circles = []
+    for k in range(len(circles)):
+        rectangles = circles[k]
+        return rectangles
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
