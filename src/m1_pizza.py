@@ -294,12 +294,12 @@ def run_test_pizza():
     #     -- on a yellow-filled circle.
     # ------------------------------------------------------------------
     # Test 4:
-    title = 'PIZZA test 4:  8 slices, thin (thickness=4) black lines.'
+    title = 'PIZZA test 4:  150 slices, thin (thickness=4) black lines.'
     window = rg.RoseWindow(400, 400, title)
     circle = rg.Circle(rg.Point(200, 200), 150)
     circle.fill_color = 'yellow'
-    circle.outline_thickness = 3
-    pizza(window, circle, 8, 'black', 4)
+    circle.outline_thickness = 1
+    pizza(window, circle, 150, 'black', 4)
     window.close_on_mouse_click()
 
 
