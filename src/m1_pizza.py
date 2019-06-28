@@ -28,8 +28,8 @@ def main():
     # ------------------------------------------------------------------
 
     run_test_generate_points_on_circle()
-    run_test_draw_points_on_circle()
-    # run_test_pizza()
+    # run_test_draw_points_on_circle()
+    run_test_pizza()
     # run_test_polygon()
     # run_test_fancy_polygon()
 
@@ -247,6 +247,7 @@ def draw_points_on_circle(window, circle, number_of_points, color):
 
     window.render()
 
+
 def run_test_pizza():
     """ Tests the   pizza   function. """
     # ------------------------------------------------------------------
@@ -292,6 +293,14 @@ def run_test_pizza():
     #     -- a large number of thin black lines
     #     -- on a yellow-filled circle.
     # ------------------------------------------------------------------
+    # Test 4:
+    title = 'PIZZA test 4:  8 slices, thin (thickness=4) black lines.'
+    window = rg.RoseWindow(400, 400, title)
+    circle = rg.Circle(rg.Point(200, 200), 150)
+    circle.fill_color = 'yellow'
+    circle.outline_thickness = 3
+    pizza(window, circle, 8, 'black', 4)
+    window.close_on_mouse_click()
 
 
 def pizza(window, circle, number_of_slices, color, thickness):
@@ -324,7 +333,7 @@ def pizza(window, circle, number_of_slices, color, thickness):
       :type thickness:        int
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -332,6 +341,15 @@ def pizza(window, circle, number_of_slices, color, thickness):
     #    (defined above) to generate the relevant points,
     #    and then draw lines that are based in part on those points.
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    circles = generate_points_on_circle(circle, number_of_slices)
+    for k in range(number_of_slices):
+        lines = rg.Line(circles[k], circle.center)
+        lines.outline_color = color
+        lines.thickness = thickness
+        lines.attach_to(window)
+
+    window.render()
 
 
 def run_test_polygon():
