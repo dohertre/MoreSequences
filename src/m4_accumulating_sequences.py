@@ -18,12 +18,12 @@ def main():
     run_test_make_less_simple_string()
 
     # ------------------------------------------------------------------
-    # TODO: 8. Uncomment the tests below before working TO DO 9.
+    # DONE: 8. Uncomment the tests below before working TO DO 9.
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    # run_test_draw_shapes()
-    # run_test_rectangles_from_circles()
+    run_test_draw_shapes()
+    run_test_rectangles_from_circles()
 
 
 def run_test_make_simple_list():
@@ -300,6 +300,11 @@ def draw_shapes(shapes, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    for k in range(len(shapes)):
+        s = shapes[k]
+        s.attach_to(window)
+    window.render(0.3)
+
 
 def run_test_rectangles_from_circles():
     """ Tests the   rectangles_from_circles    function. """
@@ -337,7 +342,6 @@ def run_test_rectangles_from_circles():
     message = 'The circles to be circumscribed are shown above.'
     message = message + '  Click to continue.'
     window.continue_on_mouse_click(message)
-
     rectangles = rectangles_from_circles(circles)
 
     if rectangles is None:
