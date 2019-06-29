@@ -417,7 +417,8 @@ def rectangles_from_circles(circles):
     # ------------------------------------------------------------------
     circles = []
     for k in range(len(circles)):
-        rectangles = circles[k]
+        s = circles[k]
+        rectangles = s[k]
         return rectangles
 
 # ----------------------------------------------------------------------
